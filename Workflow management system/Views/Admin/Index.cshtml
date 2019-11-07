@@ -1,0 +1,53 @@
+﻿@{
+    //  Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Lecturer";
+}
+<!-- Page Content -->
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <br />
+        <!--row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="white-box">
+                    <div class="r-icon-stats d-flex justify-content-between">
+                        <i class="fas fa-tasks bg-success text-left"></i>
+                        <div class="bodystate text-right">
+                            <h4>13</h4>
+                            <span class="text-muted">Pending  Tasks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row -->
+        <!-- /row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="white-box">
+                    <h3 class="box-title m-b-0">Recent Pending Tasks</h3>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Task</th>
+                                    <th>Date Created</th>
+                                    <th>Student</th>
+                                </tr>
+                            </thead>
+                            <tbody id="created">
+                                <!-- fill up with server data -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- .right-sidebar -->
+        <!-- /#page-wrapper -->
+    </div>
+</div>

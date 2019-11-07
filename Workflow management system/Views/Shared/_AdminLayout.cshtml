@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - Workflow Management System</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/admin/plugins/images/favicon.png">
+    <script src="https://kit.fontawesome.com/097decb573.js" crossorigin="anonymous"></script>
+    @Styles.Render("~/Content/admin")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header">
+                <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)"
+                   data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
+                <div class="top-left-part">
+                    <a class="logo" href="index.html">
+                        <b>
+              
+                            <img src="~/Content/admin/plugins/images/eliteadmin-logo.png"
+                                 alt="home" />
+                        </b><span class="hidden-xs"><strong>Lecturer's</strong>Portal</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- Left navbar-header -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+                <ul class="nav" id="side-menu">
+                    <li class="sidebar-search hidden-sm hidden-md hidden-lg">
+                        <!-- input-group -->
+                        <div class="input-group custom-search-form">
+                            <input type="text" class="form-control" placeholder="Search..."> <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"> <i class="fa fa-search"></i> </button>
+                            </span>
+                        </div>
+                        <!-- /input-group -->
+                    </li>
+                    <li class="user-pro">
+                        <a href="#" class="waves-effect">
+                            <img src="~/Content/admin/plugins/images/users/Capture.JPG" alt="user-img"
+                                 class="img-circle"> <span class="hide-menu">BLANK<span class="fa arrow"></span></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
+                            <li><a href="javascript:void(0)"><i class="ti-email"></i> Inbox</a></li>
+                            <li><a href="javascript:void(0)"><i class="ti-settings"></i> Account Setting</a></li>
+                            <li><a href="javascript:void(0)"><i class="fa fa-power-off"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-small-cap m-t-10">--- Main Menu</li>
+                    <li>
+                        <a href="index.html" class="waves-effect"><i class="ti-dashboard p-r-10"></i> <span class="hide-menu">Dashboard</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="waves-effect">
+                            <i class="linea-icon linea-basic fas fa-cogs"></i> <span class="hide-menu">
+                                Workflow <span class="fa arrow"></span>
+                            </span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li> <a href="javascript:void(0);">Create Workflow</a> </li>
+                            <li> <a href="javascript:void(0);">View Workflow</a> </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="waves-effect">
+                            <i class="linea-icon linea-basic fas fa-tasks"></i> <span class="hide-menu">
+                                Tasks <span class="label label-rouded label-danger pull-right">6</span><span class="fa arrow"></span>
+                            </span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li> <a href="javascript:void(0);">View Tasks</a> </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="waves-effect">
+                            <i class="icon-envelope p-r-10"></i> <span class="hide-menu">Mail<span class="fa arrow"></span></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li> <a href="">Inbox</a></li>
+                            <li> <a href="">Compose mail</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="login.html" class="waves-effect">
+                            <i class="icon-logout fa-fw"></i> <span class="hide-menu">
+                                Log
+                                out
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Left navbar-header end -->
+    </div>
+
+    <!-- Page Content -->
+    <div>
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/admin")
+</body>
+</html>

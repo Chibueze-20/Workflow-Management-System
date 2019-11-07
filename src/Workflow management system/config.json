@@ -1,0 +1,10 @@
+{
+  "AppSettings": {
+    "SiteTitle": "Workflow_management_system"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-Workflow_management_system-c9256e09-95d0-4c7a-80fe-2965dc15407e;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
+}
