@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Net;
 using System.Web.Mvc;
 using Workflow_management_system.Models;
+using System.Data.Entity;
 
 namespace Workflow_management_system.Controllers
 {
@@ -60,8 +62,136 @@ namespace Workflow_management_system.Controllers
                 return RedirectToAction("Students");
             }
             return View();
+        }
 
+        public ActionResult EditLecturer(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Admin lecturer = db.Admins.Find(id);
+            if (lecturer == null)
+            {
+                return HttpNotFound();
+            }
+            return View(lecturer);
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditLecturer(Admin lecturer)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(lecturer).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Lecturers");
+            }
+            return View("Lecturers");
+        }
+
+        public ActionResult LecturerDetails(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Admin lecturer = db.Admins.Find(id);
+            if (lecturer == null)
+            {
+                return HttpNotFound();
+            }
+            return View(lecturer);
+        }
+
+        public ActionResult DeleteLecturer(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Admin lecturer = db.Admins.Find(id);
+            if (lecturer == null)
+            {
+                return HttpNotFound();
+            }
+            return View(lecturer);
+        }
+
+        [HttpPost, ActionName("DeleteLecturer")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(string id)
+        {
+            Admin lecturer = db.Admins.Find(id);
+            db.Admins.Remove(lecturer);
+            db.SaveChanges();
+            return RedirectToAction("Lecturers");
+        }
+
+        public ActionResult EditStudent(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Student student = db.Students.Find(id);
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
+            return View(student);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditStudent(Student student)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(student).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Students");
+            }
+            return View("Students");
+        }
+
+        public ActionResult StudentDetails(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Student student = db.Students.Find(id);
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
+            return View(student);
+        }
+
+        public ActionResult DeleteStudent(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Student student = db.Students.Find(id);
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
+            return View(student);
+        }
+
+        [HttpPost, ActionName("DeleteStudent")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete_Confirmed(string id)
+        {
+            Student student = db.Students.Find(id);
+            db.Students.Remove(student);
+            db.SaveChanges();
+            return RedirectToAction("Students");
         }
     }
 }

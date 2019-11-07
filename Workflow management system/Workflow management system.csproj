@@ -3869,6 +3869,12 @@
     <Content Include="Views\User\CreateLecturer.cshtml" />
     <Content Include="Views\User\Students.cshtml" />
     <Content Include="Views\User\CreateStudent.cshtml" />
+    <Content Include="Views\User\EditLecturer.cshtml" />
+    <Content Include="Views\User\LecturerDetails.cshtml" />
+    <Content Include="Views\User\DeleteLecturer.cshtml" />
+    <Content Include="Views\User\EditStudent.cshtml" />
+    <Content Include="Views\User\StudentDetails.cshtml" />
+    <Content Include="Views\User\DeleteStudent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
