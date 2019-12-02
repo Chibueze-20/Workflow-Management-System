@@ -123,3 +123,6 @@ ul.inline .seperator {
 footer{
     padding:10px 20px;
 }
+hr{
+    border-color:#d7b600 !important;
+}
