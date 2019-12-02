@@ -2969,6 +2969,7 @@
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\custom\approval.js" />
     <Content Include="Scripts\custom\workflow.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
@@ -3894,6 +3895,18 @@
     <Content Include="Views\Workflow\CreateWorkflowType.cshtml" />
     <Content Include="Views\Workflow\EditWorkflowType.cshtml" />
     <Content Include="Views\Lecturer\Index.cshtml" />
+    <Content Include="Views\Lecturer\Mail.cshtml" />
+    <Content Include="Views\Lecturer\Compose.cshtml" />
+    <Content Include="Views\Lecturer\MailDetails.cshtml" />
+    <Content Include="Views\Lecturer\DeleteMail.cshtml" />
+    <Content Include="Views\Lecturer\Workflow.cshtml" />
+    <Content Include="Views\Lecturer\WorkflowDetails.cshtml" />
+    <Content Include="Views\Lecturer\Posts.cshtml" />
+    <Content Include="Views\Lecturer\CreatePost.cshtml" />
+    <Content Include="Views\Lecturer\PostDetails.cshtml" />
+    <Content Include="Views\Lecturer\DeletePost.cshtml" />
+    <Content Include="Views\Lecturer\Approve.cshtml" />
+    <Content Include="Views\Lecturer\Reject.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

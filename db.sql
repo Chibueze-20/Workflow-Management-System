@@ -75,12 +75,14 @@ CREATE TABLE IF NOT EXISTS `mail` (
   `To` varchar(255) NOT NULL,
   `Subject` varchar(255) NOT NULL,
   `Message` varchar(255) NOT NULL,
-  `Read` bit(1) NOT NULL,
+  `Read` bit(1) NOT NULL DEFAULT b'0',
   PRIMARY KEY (`MailID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table workflow_app.mail: ~0 rows (approximately)
+-- Dumping data for table workflow_app.mail: ~1 rows (approximately)
 /*!40000 ALTER TABLE `mail` DISABLE KEYS */;
+INSERT INTO `mail` (`MailID`, `From`, `To`, `Subject`, `Message`, `Read`) VALUES
+	('001', 'okedelep@gmail.com', 'analogbeichibueze@gmail.com', 'Test', 'This is a mail sample test', b'0');
 /*!40000 ALTER TABLE `mail` ENABLE KEYS */;
 
 -- Dumping structure for table workflow_app.post
@@ -129,13 +131,16 @@ CREATE TABLE IF NOT EXISTS `workflow` (
   `WorkflowID` varchar(16) NOT NULL,
   `WorkflowTypeID` varchar(16) NOT NULL,
   `Value` longtext NOT NULL,
+  `Approval` longtext NOT NULL,
   PRIMARY KEY (`WorkflowID`),
   UNIQUE KEY `WorkflowTypeID` (`WorkflowTypeID`),
   CONSTRAINT `FK_workflow_workflow_type` FOREIGN KEY (`WorkflowTypeID`) REFERENCES `workflow_type` (`WorkflowTypeID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table workflow_app.workflow: ~0 rows (approximately)
+-- Dumping data for table workflow_app.workflow: ~1 rows (approximately)
 /*!40000 ALTER TABLE `workflow` DISABLE KEYS */;
+INSERT INTO `workflow` (`WorkflowID`, `WorkflowTypeID`, `Value`, `Approval`) VALUES
+	('001', '1123', 'value', 'Pending');
 /*!40000 ALTER TABLE `workflow` ENABLE KEYS */;
 
 -- Dumping structure for table workflow_app.workflow_type

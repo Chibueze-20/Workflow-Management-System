@@ -30,7 +30,6 @@ namespace Workflow_management_system.Models
         [Required]
         [Display(Name = "Message")]
         public string Message { get; set; }
-        [Required]
         [Display(Name = "Read")]
         public Boolean Read { get; set; }
     }

@@ -20,6 +20,9 @@ namespace Workflow_management_system.Models
         public string WorkflowTypeID { get; set; }
         [Display(Name = "Value")]
         public string Value { get; set; }
+
+        [Display(Name = "Approval")]
+        public string Approval { get; set; }
     }
 
     [Table("workflow_type")]
