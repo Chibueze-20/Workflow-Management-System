@@ -12,32 +12,36 @@
     margin-top: 50px;
 }
 
-input[type=button], input[type=submit], button {
-    padding: 5px 20px;
-    background-color: #ffd800;
-    color: #000;
-    border-radius: 0;
+input[type=button], input[type=submit], button, .btn, .btn-primary {
+    padding: 5px 20px !important;
+    background-color: #ffd800 !important;
+    color: #000 !important;
+    border-radius: 0 !important;
+    border:none;
 }
 
     input[type=button]:hover, input[type=submit]:hover, button:hover {
         background-color: #d7b600;
     }
-
-input[type=text], input[type=password], input[type=text], input[type=text] {
-    border-radius: 0;
-    border: none;
-    background-color: #ffffff;
-    border-bottom: 3px solid #d7b600;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.26);
+.btn, .btn-primary {
+margin-top:10px;
 }
+input[type=text], input[type=password], select, input[type=text], input[type=text] {
+        border-radius: 0 !important;
+        border: none !important;
+        background-color: #ffffff !important;
+        border-bottom: 3px solid #d7b600 !important;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.26) !important;
+        width: 100%;
+    }
 
 a {
     color: inherit !important;
 }
 
     a:hover {
-        color: #d7b600;
-        text-decoration: none;
+        color: #d7b600 !important;
+        text-decoration: none ;
     }
 
 .card {
@@ -53,11 +57,19 @@ a {
     font-size:larger;
     font-weight:500;
 }
+.card-footer{
+    border-top:1px solid #d7b600;
+    padding-top:5px;
+    background-color:inherit;
+}
 
 header {
     background-color: #ffd800;
     color: #000;
     height: 50px;
+}
+header a:hover{
+    color:#000 !important;
 }
 
 #sideBar {
