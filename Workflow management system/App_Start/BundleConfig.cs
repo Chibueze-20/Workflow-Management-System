@@ -57,6 +57,9 @@ namespace Workflow_management_system
                    "~/Content/admin/css/animate.css",
                    "~/Content/admin/css/style.css",
                    "~/Content/admin/css/colors/megna.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/custom").Include(
+                "~/Scripts/custom/workflow.js"));
         }
     }
 }
