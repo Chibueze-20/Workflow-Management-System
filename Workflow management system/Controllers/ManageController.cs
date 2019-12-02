@@ -10,7 +10,7 @@ using Workflow_management_system.Models;
 
 namespace Workflow_management_system.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;
