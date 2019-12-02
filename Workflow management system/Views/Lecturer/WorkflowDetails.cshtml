@@ -1,0 +1,42 @@
+﻿@model Workflow_management_system.Models.Workflow
+
+@{
+    ViewBag.Title = "WorkflowDetails";
+}
+
+<h2>WorkflowDetails</h2>
+
+<div>
+    <h4>Workflow</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkflowTypeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkflowTypeID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Value)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Value)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Approval)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Approval)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.WorkflowID }) |*@
+    @Html.ActionLink("Back to List", "Workflow")
+</p>

@@ -60,6 +60,9 @@ namespace Workflow_management_system
 
             bundles.Add(new ScriptBundle("~/bundles/custom").Include(
                 "~/Scripts/custom/workflow.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/custom/approval").Include(
+                "~/Scripts/custom/approval.js"));
         }
     }
 }
