@@ -185,6 +185,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppClass.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -2931,6 +2932,7 @@
     <Content Include="Content\admin\plugins\images\users\salman.jpg" />
     <Content Include="Content\admin\plugins\images\users\sonu.jpg" />
     <Content Include="Content\admin\plugins\images\users\varun.jpg" />
+    <Content Include="Content\responsive.css" />
     <Content Include="Content\AppStyle.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -2939,6 +2941,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\unilag_logo.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

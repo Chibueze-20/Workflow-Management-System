@@ -1,3 +1,45 @@
 ﻿body {
-    background-color:#f6f6f6;
+    background-color: #fff;
+    font-family:Verdana !important;
+}
+
+.login-sideimage {
+    height: 350px;
+}
+
+#loginForm{
+    margin-top:50px;
+}
+input[type=button], input[type=submit], button{
+    padding:5px 20px;
+    background-color:#ffd800;
+    color:#000;
+    border-radius:0;
+}
+    input[type=button]:hover, input[type=submit]:hover, button:hover{
+        background-color:#d7b600;
+    }
+
+input[type=text], input[type=password], input[type=text], input[type=text]{
+    border-radius:0;
+    border:none;
+    background-color:#ffffff;
+    border-bottom:3px solid #d7b600;
+    box-shadow:0 0 2px rgba(0, 0, 0, 0.26);
+}
+a{
+    color:inherit !important;
+}
+a:hover{
+    color:#d7b600;
+    text-decoration:none;
+}
+.card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.26);
+    padding: 5px 10px;
+    /*padding: 0;*/
+    border-top: 3px solid #d7b600;
+}
+.card-head{
+    font-weight:600;
 }
