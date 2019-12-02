@@ -77,22 +77,23 @@ header a:hover{
     width: 250px;
     position: fixed;
     top: 55px;
-    height: 100%;
+  bottom:0;
     text-align: center;
 }
 
     #sideBar li {
         display: inline-block;
-        padding: 5px 10px;
+        padding: 0;
+        margin-top:5px;
     }
 
         #sideBar li.link:hover {
             background-color: rgba(0, 0, 0, 0.26);
-            color: #fff;
         }
 
-        #sideBar li a {
+        #sideBar li.link a {
             display: block;
+            padding: 5px 10px;
         }
 
         #sideBar li.profile-pic img {
@@ -109,7 +110,8 @@ header a:hover{
     left: 250px;
     right: 0;
     padding: 10px 30px;
-    height:100%;
+    bottom:0;
+    top:55px;
     overflow:auto;
 }
 
