@@ -1,45 +1,113 @@
 ﻿body {
     background-color: #fff;
-    font-family:Verdana !important;
+    font-family: Verdana !important;
+    border-top: 5px solid #000;
 }
 
 .login-sideimage {
     height: 350px;
 }
 
-#loginForm{
-    margin-top:50px;
+#loginForm {
+    margin-top: 50px;
 }
-input[type=button], input[type=submit], button{
-    padding:5px 20px;
-    background-color:#ffd800;
-    color:#000;
-    border-radius:0;
+
+input[type=button], input[type=submit], button {
+    padding: 5px 20px;
+    background-color: #ffd800;
+    color: #000;
+    border-radius: 0;
 }
-    input[type=button]:hover, input[type=submit]:hover, button:hover{
-        background-color:#d7b600;
+
+    input[type=button]:hover, input[type=submit]:hover, button:hover {
+        background-color: #d7b600;
     }
 
-input[type=text], input[type=password], input[type=text], input[type=text]{
-    border-radius:0;
-    border:none;
-    background-color:#ffffff;
-    border-bottom:3px solid #d7b600;
-    box-shadow:0 0 2px rgba(0, 0, 0, 0.26);
+input[type=text], input[type=password], input[type=text], input[type=text] {
+    border-radius: 0;
+    border: none;
+    background-color: #ffffff;
+    border-bottom: 3px solid #d7b600;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.26);
 }
-a{
-    color:inherit !important;
+
+a {
+    color: inherit !important;
 }
-a:hover{
-    color:#d7b600;
-    text-decoration:none;
-}
+
+    a:hover {
+        color: #d7b600;
+        text-decoration: none;
+    }
+
 .card {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.26);
-    padding: 5px 10px;
+    padding: 15px 10px 5px 10px;
     /*padding: 0;*/
     border-top: 3px solid #d7b600;
 }
-.card-head{
-    font-weight:600;
+
+.card-head {
+    padding:5px 10px;
+    border-bottom:1px solid #d7b600;
+    font-size:larger;
+    font-weight:500;
+}
+
+header {
+    background-color: #ffd800;
+    color: #000;
+    height: 50px;
+}
+
+#sideBar {
+    background-color: #d7b600;
+    width: 250px;
+    position: fixed;
+    top: 55px;
+    height: 100%;
+    text-align: center;
+}
+
+    #sideBar li {
+        display: inline-block;
+        padding: 5px 10px;
+    }
+
+        #sideBar li.link:hover {
+            background-color: rgba(0, 0, 0, 0.26);
+            color: #fff;
+        }
+
+        #sideBar li a {
+            display: block;
+        }
+
+        #sideBar li.profile-pic img {
+            margin-top:5px;
+            border-radius:3%;
+            height:150px;
+            width:150px;
+            background-color:#fff;
+            box-shadow:0 0 10px #000;
+        }
+
+.body-content {
+    position: fixed;
+    left: 250px;
+    right: 0;
+    padding: 10px 30px;
+    height:100%;
+    overflow:auto;
+}
+
+ul.inline li {
+    display: inline-block;
+}
+
+ul.inline .seperator {
+    padding-left: 5px;
+}
+footer{
+    padding:10px 20px;
 }
