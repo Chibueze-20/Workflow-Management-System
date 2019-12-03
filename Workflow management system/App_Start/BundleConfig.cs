@@ -10,7 +10,7 @@ namespace Workflow_management_system
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
-            bundles.Add(new ScriptBundle("~/bundles/AppSript").Include("~/Scripts/Appscript.js"));
+            bundles.Add(new ScriptBundle("~/bundles/AppScript").Include("~/Scripts/Appscript.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -47,7 +47,8 @@ namespace Workflow_management_system
             bundles.Add(new StyleBundle("~/Content/css").Include(
                          "~/Content/bootstrap.css",
                          "~/Content/site.css",
-                         "~/Content/AppStyle.css"));
+                         "~/Content/AppStyle.css",
+                         "~/Content/responsive.css"));
 
             bundles.Add(new StyleBundle("~/Content/admin").Include(
                     "~/Content/admin/bootstrap/dist/css/bootstrap.min.css",
@@ -57,6 +58,12 @@ namespace Workflow_management_system
                    "~/Content/admin/css/animate.css",
                    "~/Content/admin/css/style.css",
                    "~/Content/admin/css/colors/megna.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/custom").Include(
+                "~/Scripts/custom/workflow.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/custom/approval").Include(
+                "~/Scripts/custom/approval.js"));
         }
     }
 }

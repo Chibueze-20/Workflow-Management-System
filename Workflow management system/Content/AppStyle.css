@@ -1,2 +1,130 @@
 ﻿body {
+    background-color: #fff;
+    font-family: Verdana !important;
+    border-top: 5px solid #000;
+}
+
+.login-sideimage {
+    height: 350px;
+}
+
+#loginForm {
+    margin-top: 50px;
+}
+
+input[type=button], input[type=submit], button, .btn, .btn-primary {
+    padding: 5px 20px !important;
+    background-color: #ffd800 !important;
+    color: #000 !important;
+    border-radius: 0 !important;
+    border:none;
+}
+
+    input[type=button]:hover, input[type=submit]:hover, button:hover {
+        background-color: #d7b600;
+    }
+.btn, .btn-primary {
+margin-top:10px;
+}
+input[type=text], input[type=password], select, input[type=email], input[type=number] {
+        border-radius: 0 !important;
+        border: none !important;
+        background-color: #ffffff !important;
+        border-bottom: 3px solid #d7b600 !important;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.26) !important;
+        width: 100%;
+    }
+
+a {
+    color: inherit !important;
+}
+
+    a:hover {
+        color: #d7b600 !important;
+        text-decoration: none ;
+    }
+
+.card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.26);
+    padding: 15px 10px 5px 10px;
+    /*padding: 0;*/
+    border-top: 3px solid #d7b600;
+}
+
+.card-head {
+    padding:5px 10px;
+    border-bottom:1px solid #d7b600;
+    font-size:larger;
+    font-weight:500;
+}
+.card-footer{
+    border-top:1px solid #d7b600;
+    padding-top:5px;
+    background-color:inherit;
+}
+
+header {
+    background-color: #ffd800;
+    color: #000;
+    height: 50px;
+}
+header a:hover{
+    color:#000 !important;
+}
+
+#sideBar {
+    background-color: #d7b600;
+    width: 250px;
+    position: fixed;
+    top: 55px;
+  bottom:0;
+    text-align: center;
+}
+
+    #sideBar li {
+        display: inline-block;
+        padding: 0;
+        margin-top:5px;
+    }
+
+        #sideBar li.link:hover {
+            background-color: rgba(0, 0, 0, 0.26);
+        }
+
+        #sideBar li.link a {
+            display: block;
+            padding: 5px 10px;
+        }
+
+        #sideBar li.profile-pic img {
+            margin-top:5px;
+            border-radius:3%;
+            height:150px;
+            width:150px;
+            background-color:#fff;
+            box-shadow:0 0 10px #000;
+        }
+
+.body-content {
+    position: fixed;
+    left: 250px;
+    right: 0;
+    padding: 10px 30px;
+    bottom:0;
+    top:55px;
+    overflow:auto;
+}
+
+ul.inline li {
+    display: inline-block;
+}
+
+ul.inline .seperator {
+    padding-left: 5px;
+}
+footer{
+    padding:10px 20px;
+}
+hr{
+    border-color:#d7b600 !important;
 }

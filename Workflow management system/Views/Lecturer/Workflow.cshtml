@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Workflow_management_system.Models.Workflow>
+
+@{
+    ViewBag.Title = "Workflow";
+}
+
+<h2>Workflow</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateWorkflow")
+</p>
+<table class="table" id="add_form">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkflowTypeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Value)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr id="myForm">
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkflowTypeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Value)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.WorkflowID }) |*@
+            @Html.ActionLink("Details", "WorkflowDetails", new { id=item.WorkflowID }) |
+            @Html.ActionLink("Approve", "Approve", new { id = item.WorkflowID }) |
+            @Html.ActionLink("Reject", "Reject", new { id=item.WorkflowID })
+        </td>
+    </tr>
+}
+
+</table>
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/custom/approval")
+}*@

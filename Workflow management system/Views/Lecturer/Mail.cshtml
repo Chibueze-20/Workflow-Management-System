@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Workflow_management_system.Models.Mail>
+
+@{
+    ViewBag.Title = "Mail";
+}
+
+<h2>Mail</h2>
+
+<p>
+    @Html.ActionLink("Compose", "Compose")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.From)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.To)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Read)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.From)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.To)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message)
+        </td>
+        <td>
+            @if (item.Read == false)
+            {
+                <span>No</span>
+            }
+            else
+            {
+                <span>Yes</span>
+            }
+            @*@Html.DisplayFor(modelItem => item.Read)*@
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.MailID }) |*@
+            @Html.ActionLink("Details", "MailDetails", new { id=item.MailID }) |
+            @Html.ActionLink("Delete", "DeleteMail", new { id=item.MailID })
+        </td>
+    </tr>
+}
+
+</table>
