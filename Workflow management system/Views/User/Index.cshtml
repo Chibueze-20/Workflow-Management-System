@@ -1,9 +1,32 @@
 ﻿
 @{
+    Layout = "~/views/shared/_WebAdminLayout.cshtml";
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-@Html.ActionLink("Lecturer", "Lecturers") <br />
-@Html.ActionLink("Student", "Students")
+<div class="jumbotron">
+    <h2>User management</h2>
+    <div class="card-deck">
+        <div class="card text-white bg-info">
+            <img src="../Content/Images/EmptyChalkboard.svg" class="card-img-top" alt="..."  style="max-height: 25rem;"/>
+            <a class="text-white" style="text-decoration:none" href="@Url.Action("Lecturers")">
+                <div class="card-body">
+                    <h5 class="card-title">Lecturer</h5>
+                    <p class="card-text">Manage Lecturer actions.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="card text-white bg-info">
+            <img src="~/Content/Images/student.jpg" class="card-img-top" alt="..." style="max-height: 25rem;"/>
+            <a class="text-white" style="text-decoration:none" href="@Url.Action("Students")">
+                <div class="card-body">
+                    <h5 class="card-title text-white">Student</h5>
+                    <p class="card-text">Manage student actions.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <br />
+</div>
 

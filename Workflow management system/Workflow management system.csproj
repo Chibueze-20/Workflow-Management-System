@@ -3869,6 +3869,7 @@
     <Content Include="Views\User\CreateLecturer.cshtml" />
     <Content Include="Views\User\Students.cshtml" />
     <Content Include="Views\User\CreateStudent.cshtml" />
+    <Content Include="Views\Shared\_WebAdminLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
