@@ -39,5 +39,17 @@ namespace Workflow_management_system.Models
         [Display(Name = "Requirements")]
         public string Requirements { get; set; }
     }
+     public class WorkflowRequirements
+     {
+          public string type { get; set; }
+          public string description { get; set; }
+     }
+     public class WorkflowTemplate
+     {
+          [Key]
+          public string WorkflowTypeID { get; set; }
+          public string Name { get; set; }
+          public List<WorkflowRequirements> Requirements { get; set; }
+     }
 
 }

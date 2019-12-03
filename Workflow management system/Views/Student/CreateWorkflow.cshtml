@@ -1,0 +1,58 @@
+﻿@model Workflow_management_system.Models.WorkflowTemplate
+
+@{
+     ViewBag.Title = "CreateWorkflow";
+     int i = 0;
+}
+
+<h2>CreateWorkflow</h2>
+<h2>@Html.DisplayFor(model=>model.Name)</h2>
+<h2>ID: @Html.DisplayFor(model=>model.WorkflowTypeID)</h2>
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "formdata" }))
+{
+     @Html.AntiForgeryToken()
+     foreach (var requirement in Model.Requirements)
+     {
+          <div id="@{++i;} ">
+               <label for="@requirement.description">@requirement.description</label>
+               @if (requirement.type == "picture")
+               {
+                    <input type="file" name="@requirement.description" required />
+               }
+               else
+               {
+                    <input type="@requirement.type" name="@requirement.description" required />
+               }
+               
+          </div>
+     }
+}
+<button class="my-2">Submit</button>
+@section Scripts {
+     @Scripts.Render("~/bundles/jqueryval")
+}
+<script>
+     worflowvalue = []
+     function createworkflow() {
+          num = document.getElementById("formdata").children.length;
+          for (i = 0; i < num; i++) {
+               div = document.getElementById("formdata").children[i]
+               Description=div.children[0].innerHTML
+               Type= div.children[1].getAttribute("type")
+               if (Type == "File") {
+                  file = div.children[1].files[0]
+                  const reader = new FileReader();
+                  reader.onload = (readevent) => {
+                      Value = readevent.target.result;
+                  };
+                  reader.readAsDataURL(file);
+               } else {
+                    Value = div.children[1].value
+               }
+               worflowvalue.push({description:Description,type:Type,value:Value})
+          }
+          $.ajax({
+          //send workflowvalue to backend
+          })
+     }
+</script>

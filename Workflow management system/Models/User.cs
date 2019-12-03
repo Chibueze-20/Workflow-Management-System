@@ -89,8 +89,10 @@ namespace Workflow_management_system.Models
         public virtual DbSet<Web_admin> WebAdmins { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Workflow> Workflows { get; set; }
-        public virtual DbSet<WorkflowType> Types { get; set; }
+        public virtual DbSet<WorkflowType> WorkflowTypes { get; set; }
         public virtual DbSet<Mail> Mail { get; set; }
         public virtual DbSet<Post> Posts { get; set; }
+        public virtual DbSet<Course>Courses { get; set; }
+        public virtual DbSet<CourseRegistration> CourseRegistration { get; set; }
     }
 }

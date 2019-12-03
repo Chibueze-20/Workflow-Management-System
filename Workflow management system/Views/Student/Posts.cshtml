@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Workflow_management_system.Models.Post>
+
+@{
+    ViewBag.Title = "Posts";
+}
+
+<h2>Posts</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Broadcast)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Broadcast)
+        </td>
+    </tr>
+}
+
+</table>

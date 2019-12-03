@@ -15,7 +15,7 @@ namespace Workflow_management_system.Controllers
         // GET: Workflow
         public ActionResult Index()
         {
-            IList<WorkflowType> workflow = db.Types.ToList();
+            IList<WorkflowType> workflow = db.WorkflowTypes.ToList();
             return View(workflow);
         }
 
@@ -33,7 +33,7 @@ namespace Workflow_management_system.Controllers
                 ViewData["WorkflowTypeID"] = workflowtype.WorkflowTypeID;
                 ViewData["Name"] = workflowtype.Name;
                 ViewData["requirements"] = workflowtype.Requirements;
-                db.Types.Add(workflowtype);
+                db.WorkflowTypes.Add(workflowtype);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -46,7 +46,7 @@ namespace Workflow_management_system.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WorkflowType type = db.Types.Find(id);
+            WorkflowType type = db.WorkflowTypes.Find(id);
             if (type == null)
             {
                 return HttpNotFound();
@@ -73,7 +73,7 @@ namespace Workflow_management_system.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WorkflowType type = db.Types.Find(id);
+            WorkflowType type = db.WorkflowTypes.Find(id);
             if (type == null)
             {
                 return HttpNotFound();
@@ -87,7 +87,7 @@ namespace Workflow_management_system.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WorkflowType type = db.Types.Find(id);
+            WorkflowType type = db.WorkflowTypes.Find(id);
             if (type == null)
             {
                 return HttpNotFound();
@@ -99,8 +99,8 @@ namespace Workflow_management_system.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            WorkflowType type = db.Types.Find(id);
-            db.Types.Remove(type);
+            WorkflowType type = db.WorkflowTypes.Find(id);
+            db.WorkflowTypes.Remove(type);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
