@@ -74,12 +74,19 @@ namespace Workflow_management_system.Controllers
           public ActionResult Getworkflows()
           {
                List<WorkflowType> workflowtypes =  db.WorkflowTypes.ToList();
-               return View(workflowtypes);
+               return View("Viewworkflows",workflowtypes);
+          }
+          [HttpGet]
+          public ActionResult ViewRequests()
+          {
+               List<WorkflowView> requests = db.WorkflowView.Where(wfv => wfv.UserID == "").OrderByDescending(wfv => wfv.WorkflowID).ToList();
+               return View(requests);
           }
           [HttpGet]
           public ActionResult CreateWorkflow(string id)
           {
-               WorkflowType workflowtype = db.WorkflowTypes.First(wft => wft.WorkflowTypeID == id);
+               ViewData["workflow"] = id;
+               WorkflowType workflowtype = db.WorkflowTypes.Find(id);
                WorkflowTemplate template = new WorkflowTemplate();
                template.Name = workflowtype.Name;
                template.WorkflowTypeID = workflowtype.WorkflowTypeID;
@@ -92,6 +99,28 @@ namespace Workflow_management_system.Controllers
                     }
                }
                     return View(template);
+          }
+          [HttpPost]
+          public ActionResult CreateWorkflow(IList<WorkflowData> workflowdata)
+          {
+               string courseadviser = db.Admins.First(admin => admin.Type == "course adviser" && admin.Level == "").UserID;
+               string HOD = db.Admins.First(admin => admin.Type == "head of department").UserID;
+               WorkflowValue value = new WorkflowValue();
+               value.data = workflowdata.ToList();
+               value.personel = new List<Personel>() { new Personel(courseadviser, "unattended"), new Personel(HOD, "pending") };
+               string jsonvalue = JsonConvert.SerializeObject(value);
+               Workflow workflow = new Workflow();
+               workflow.Approval = "Pending";
+               workflow.Value = jsonvalue;
+               workflow.WorkflowTypeID = (string)ViewData["workflow"];
+               workflow.UserID = "";
+               workflow.WorkflowID = (db.Workflows.Count()+1).ToString();
+               ViewData.Remove("workflow");
+               db.Workflows.Add(workflow);
+               db.SaveChanges();
+               ViewData["feedback message"] = "request created succesfully";
+
+               return RedirectToAction("ViewRequests");
           }
     }
 }

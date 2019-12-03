@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Workflow_management_system.Models.WorkflowView>
+
+@{
+    ViewBag.Title = "ViewRequests";
+}
+
+<h2>View Requests</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RequestType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Approval)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequestType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Approval)
+        </td>
+    </tr>
+}
+
+</table>

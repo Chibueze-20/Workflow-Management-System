@@ -3915,6 +3915,7 @@
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Student\Viewworkflows.cshtml" />
     <Content Include="Views\Student\CreateWorkflow.cshtml" />
+    <Content Include="Views\Student\ViewRequests.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

@@ -15,14 +15,7 @@
      {
           <div id="@{++i;} ">
                <label for="@requirement.description">@requirement.description</label>
-               @if (requirement.type == "picture")
-               {
-                    <input type="file" name="@requirement.description" required />
-               }
-               else
-               {
-                    <input type="@requirement.type" name="@requirement.description" required />
-               }
+               <input type="@requirement.type" name="@requirement.description" required />
                
           </div>
      }
@@ -52,6 +45,11 @@
                worflowvalue.push({description:Description,type:Type,value:Value})
           }
           $.ajax({
+               url: "/Student/CreateWorkflow",
+               type: "POST",
+               data: worflowvalue,
+               contentType: "application/json; charset=utf-8",
+               dataType:"json"
           //send workflowvalue to backend
           })
      }

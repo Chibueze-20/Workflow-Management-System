@@ -74,6 +74,8 @@ namespace Workflow_management_system.Models
         public string Firstname { get; set; }
         [Display(Name = "Last Name")]
         public string Lastname { get; set; }
+        [Display(Name ="Level assigned")]
+        public string Level { get; set; }
 
     }
 
@@ -94,5 +96,6 @@ namespace Workflow_management_system.Models
         public virtual DbSet<Post> Posts { get; set; }
         public virtual DbSet<Course>Courses { get; set; }
         public virtual DbSet<CourseRegistration> CourseRegistration { get; set; }
+        public virtual DbSet<WorkflowView> WorkflowView { get; set; }
     }
 }
