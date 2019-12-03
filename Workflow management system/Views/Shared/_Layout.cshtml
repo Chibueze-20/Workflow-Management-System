@@ -10,7 +10,7 @@
     @Scripts.Render("~/bundles/AppScript")
     <link rel="shortcut icon" type="image/x-icon" href="~/icon.png" />
 </head>
-<body>
+<body class="p-0">
     <header class="shadow-sm">
         <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="navbar-header">
@@ -24,7 +24,7 @@
                     @Html.Partial("_LoginPartial")
         </div>
     </header>
-    <div id="sideBar">
+    <div id="sideBar" class="">
         <ul class="nav navbar-nav">
             <li class="profile-pic">
                 <img src="~/Content/Images/user.png" />
