@@ -21,8 +21,11 @@ namespace Workflow_management_system.Controllers
           //GET: posts
           public ActionResult Posts()
           {
-               IList<string> boradcastlist = new List<string> { "all", "100 level", "csc 100", "csc 120" };
-              List<Post> posts = db.Posts.Where(x => boradcastlist.Contains(x.Broadcast)).ToList();
+               string level = ((Student)LoginManager.Account.User).Level + " level";
+               List<CourseRegistration> courses = db.CourseRegistration.Where(cr => cr.UserID == ((Student)LoginManager.Account.User).UserID && DateTime.Parse(cr.DateRegistered).Year == DateTime.Today.Year).ToList();
+               List<string> allcourses = courses.ConvertAll(cv => { return cv.CourseCode; });
+               List<string> boradcastlist = allcourses.Concat(new List<string>() { "all", level }).ToList();
+               List<Post> posts = db.Posts.Where(x => boradcastlist.Contains(x.Broadcast)).ToList();
                return View();
           }
           [HttpGet]
@@ -37,7 +40,7 @@ namespace Workflow_management_system.Controllers
                if (ModelState.IsValid)
                {
                     coursereg.DateRegistered = DateTime.Today.ToShortDateString();
-                    coursereg.UserID = "";
+                    coursereg.UserID = ((Student)LoginManager.Account.User).UserID;
                     db.CourseRegistration.Add(coursereg);
                     db.SaveChanges();
                     ViewData["feedback message"] = "course sucessfully registerd";
@@ -55,14 +58,15 @@ namespace Workflow_management_system.Controllers
           [HttpGet]
           public ActionResult ViewCourseRegistration()
           {
-               List<CourseRegistration> registration = db.CourseRegistration.Where(x => x.UserID == "" && (DateTime.Parse(x.DateRegistered).Year == DateTime.Today.Year)).ToList();
-               List<Course> coursedetails = db.Courses.Where(x => registration.Exists(reg => reg.CourseCode == x.CourseCode)).ToList();
+               List<CourseRegistration> registration = db.CourseRegistration.Where(x => x.UserID == ((Student)LoginManager.Account.User).UserID && (DateTime.Parse(x.DateRegistered).Year == DateTime.Today.Year)).ToList();
+               List<string> courses = registration.ConvertAll(reg => { return reg.CourseCode; });
+               List<Course> coursedetails = db.Courses.Where(x => courses.Contains(x.CourseCode)).ToList();
                return View(coursedetails);
           }
           [HttpPost]
           public ActionResult DeleteCourse(string id)
           {
-               CourseRegistration reg = db.CourseRegistration.First(x => x.CourseCode == id && x.UserID == "");
+               CourseRegistration reg = db.CourseRegistration.First(x => x.CourseCode == id && x.UserID == ((Student)LoginManager.Account.User).UserID);
                db.CourseRegistration.Remove(reg);
                db.SaveChanges();
                ViewData["feedback message"] = "Course removed sucessfully";
@@ -79,7 +83,7 @@ namespace Workflow_management_system.Controllers
           [HttpGet]
           public ActionResult ViewRequests()
           {
-               List<WorkflowView> requests = db.WorkflowView.Where(wfv => wfv.UserID == "").OrderByDescending(wfv => wfv.WorkflowID).ToList();
+               List<WorkflowView> requests = db.WorkflowView.Where(wfv => wfv.UserID == ((Student)LoginManager.Account.User).UserID).OrderByDescending(wfv => wfv.WorkflowID).ToList();
                return View(requests);
           }
           [HttpGet]
@@ -103,7 +107,7 @@ namespace Workflow_management_system.Controllers
           [HttpPost]
           public ActionResult CreateWorkflow(IList<WorkflowData> workflowdata)
           {
-               string courseadviser = db.Admins.First(admin => admin.Type == "course adviser" && admin.Level == "").UserID;
+               string courseadviser = db.Admins.First(admin => admin.Type == "course adviser" && admin.Level == ((Student)LoginManager.Account.User).Level.ToString()).UserID;
                string HOD = db.Admins.First(admin => admin.Type == "head of department").UserID;
                WorkflowValue value = new WorkflowValue();
                value.data = workflowdata.ToList();
@@ -113,7 +117,7 @@ namespace Workflow_management_system.Controllers
                workflow.Approval = "Pending";
                workflow.Value = jsonvalue;
                workflow.WorkflowTypeID = (string)ViewData["workflow"];
-               workflow.UserID = "";
+               workflow.UserID = ((Student)LoginManager.Account.User).UserID;
                workflow.WorkflowID = (db.Workflows.Count()+1).ToString();
                ViewData.Remove("workflow");
                db.Workflows.Add(workflow);
